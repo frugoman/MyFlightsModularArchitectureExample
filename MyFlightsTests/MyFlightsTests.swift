@@ -10,12 +10,5 @@ import XCTest
 
 class FlightsListViewControllerTests: XCTestCase {
 
-    func test_viewDidLoad_callsViewDidLoadCallback() throws {
-        var timesCalled = 0
-        
-        let sut = FlightsListViewController { timesCalled += 1 }
-        _ = sut.view
-        
-        XCTAssertEqual(timesCalled, 1)
-    }
+    func test_viewDidLoad_callsViewDidLoadCallback() throws {}
 }
