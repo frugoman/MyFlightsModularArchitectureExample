@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import FlightsSearchPresentation
+import MyFlightsSearchEngine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -21,11 +22,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = initialVCFactory.makeInitialController()
         self.window = window
         window.makeKeyAndVisible()
-    }
-}
-
-final class InitialControllerFactory {
-    func makeInitialController() -> UIViewController {
-        UIViewController()
     }
 }
