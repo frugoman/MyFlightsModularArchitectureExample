@@ -12,7 +12,6 @@
 		531E5D062697AB26008C5827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531E5D052697AB26008C5827 /* Assets.xcassets */; };
 		531E5D092697AB26008C5827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531E5D072697AB26008C5827 /* LaunchScreen.storyboard */; };
 		531E5D142697AB26008C5827 /* MyFlightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E5D132697AB26008C5827 /* MyFlightsTests.swift */; };
-		53663134269D92E60075F9F0 /* PushFlightsSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53663128269D92E60075F9F0 /* PushFlightsSearchRouter.swift */; };
 		53663135269D92E60075F9F0 /* InitialControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53663129269D92E60075F9F0 /* InitialControllerFactory.swift */; };
 		53663136269D92E60075F9F0 /* CustomServiceFlightDetailViewControllerDelegateTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366312A269D92E60075F9F0 /* CustomServiceFlightDetailViewControllerDelegateTracker.swift */; };
 		53663137269D92E60075F9F0 /* FlightsSearchViewControllerComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366312B269D92E60075F9F0 /* FlightsSearchViewControllerComposer.swift */; };
@@ -24,6 +23,13 @@
 		5366313D269D92E60075F9F0 /* CustomServiceFlightsSearchTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53663131269D92E60075F9F0 /* CustomServiceFlightsSearchTracker.swift */; };
 		5366313E269D92E60075F9F0 /* FlightDetailViewControllerDelegateComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53663132269D92E60075F9F0 /* FlightDetailViewControllerDelegateComposer.swift */; };
 		5366313F269D92E60075F9F0 /* FlightsSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53663133269D92E60075F9F0 /* FlightsSearchRouter.swift */; };
+		53A8AA1E269F75B000EE304B /* DeeplinkFlightsSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8AA1D269F75B000EE304B /* DeeplinkFlightsSearchRouter.swift */; };
+		53A8AA25269F8F7F00EE304B /* DetailsDeeplinkScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8AA24269F8F7F00EE304B /* DetailsDeeplinkScreenFactory.swift */; };
+		53A8AA28269F90F100EE304B /* MyFlightsDeeplinking in Frameworks */ = {isa = PBXBuildFile; productRef = 53A8AA27269F90F100EE304B /* MyFlightsDeeplinking */; };
+		53A8AA2B269F91D600EE304B /* DeeplinkRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8AA2A269F91D600EE304B /* DeeplinkRegistrator.swift */; };
+		53A8AA2D269F92EC00EE304B /* FlightsSearchViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8AA2C269F92EC00EE304B /* FlightsSearchViewControllerFactory.swift */; };
+		53A8AA2F269F93A200EE304B /* UIKitPushFlightsSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8AA2E269F93A200EE304B /* UIKitPushFlightsSearchRouter.swift */; };
+		53A8AA32269F93FF00EE304B /* FlightDetailViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8AA31269F93FF00EE304B /* FlightDetailViewControllerFactory.swift */; };
 		53C102C9269CE417002EEB05 /* MyFlightsSearchEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 53C102C8269CE417002EEB05 /* MyFlightsSearchEngine */; };
 		53C102CC269CE47B002EEB05 /* FlightsSearchPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = 53C102CB269CE47B002EEB05 /* FlightsSearchPresentation */; };
 /* End PBXBuildFile section */
@@ -48,7 +54,6 @@
 		531E5D0F2697AB26008C5827 /* MyFlightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFlightsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		531E5D132697AB26008C5827 /* MyFlightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlightsTests.swift; sourceTree = "<group>"; };
 		531E5D152697AB26008C5827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53663128269D92E60075F9F0 /* PushFlightsSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushFlightsSearchRouter.swift; sourceTree = "<group>"; };
 		53663129269D92E60075F9F0 /* InitialControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialControllerFactory.swift; sourceTree = "<group>"; };
 		5366312A269D92E60075F9F0 /* CustomServiceFlightDetailViewControllerDelegateTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServiceFlightDetailViewControllerDelegateTracker.swift; sourceTree = "<group>"; };
 		5366312B269D92E60075F9F0 /* FlightsSearchViewControllerComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsSearchViewControllerComposer.swift; sourceTree = "<group>"; };
@@ -60,6 +65,13 @@
 		53663131269D92E60075F9F0 /* CustomServiceFlightsSearchTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServiceFlightsSearchTracker.swift; sourceTree = "<group>"; };
 		53663132269D92E60075F9F0 /* FlightDetailViewControllerDelegateComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailViewControllerDelegateComposer.swift; sourceTree = "<group>"; };
 		53663133269D92E60075F9F0 /* FlightsSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsSearchRouter.swift; sourceTree = "<group>"; };
+		53A8AA1D269F75B000EE304B /* DeeplinkFlightsSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkFlightsSearchRouter.swift; sourceTree = "<group>"; };
+		53A8AA24269F8F7F00EE304B /* DetailsDeeplinkScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDeeplinkScreenFactory.swift; sourceTree = "<group>"; };
+		53A8AA26269F90ED00EE304B /* MyFlightsDeeplinking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyFlightsDeeplinking; sourceTree = "<group>"; };
+		53A8AA2A269F91D600EE304B /* DeeplinkRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkRegistrator.swift; sourceTree = "<group>"; };
+		53A8AA2C269F92EC00EE304B /* FlightsSearchViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsSearchViewControllerFactory.swift; sourceTree = "<group>"; };
+		53A8AA2E269F93A200EE304B /* UIKitPushFlightsSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitPushFlightsSearchRouter.swift; sourceTree = "<group>"; };
+		53A8AA31269F93FF00EE304B /* FlightDetailViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailViewControllerFactory.swift; sourceTree = "<group>"; };
 		53C102C7269CE3E9002EEB05 /* MyFlightsSearchEngine */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyFlightsSearchEngine; sourceTree = "<group>"; };
 		53C102CA269CE46D002EEB05 /* FlightsSearchPresentation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FlightsSearchPresentation; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A8AA28269F90F100EE304B /* MyFlightsDeeplinking in Frameworks */,
 				53C102CC269CE47B002EEB05 /* FlightsSearchPresentation in Frameworks */,
 				53C102C9269CE417002EEB05 /* MyFlightsSearchEngine in Frameworks */,
 			);
@@ -107,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				53663145269D94630075F9F0 /* Flights */,
-				53663129269D92E60075F9F0 /* InitialControllerFactory.swift */,
+				53A8AA29269F91C500EE304B /* Initialization */,
 				531E5CFC2697AB25008C5827 /* AppDelegate.swift */,
 				531E5CFE2697AB25008C5827 /* SceneDelegate.swift */,
 				531E5D052697AB26008C5827 /* Assets.xcassets */,
@@ -130,9 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				53663142269D94220075F9F0 /* Tracking */,
-				53663144269D94360075F9F0 /* Routing */,
+				53663144269D94360075F9F0 /* UIKit */,
 				5366312B269D92E60075F9F0 /* FlightsSearchViewControllerComposer.swift */,
-				5366312D269D92E60075F9F0 /* UIKitFlightsSearchViewControllerFactory.swift */,
+				53663133269D92E60075F9F0 /* FlightsSearchRouter.swift */,
+				53A8AA2C269F92EC00EE304B /* FlightsSearchViewControllerFactory.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -143,6 +157,8 @@
 				53663143269D94280075F9F0 /* Tracking */,
 				53663132269D92E60075F9F0 /* FlightDetailViewControllerDelegateComposer.swift */,
 				5366312F269D92E60075F9F0 /* UIKitFlightDetailViewControllerFactory.swift */,
+				53A8AA31269F93FF00EE304B /* FlightDetailViewControllerFactory.swift */,
+				53A8AA24269F8F7F00EE304B /* DetailsDeeplinkScreenFactory.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -165,13 +181,13 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
-		53663144269D94360075F9F0 /* Routing */ = {
+		53663144269D94360075F9F0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				53663133269D92E60075F9F0 /* FlightsSearchRouter.swift */,
-				53663128269D92E60075F9F0 /* PushFlightsSearchRouter.swift */,
+				5366312D269D92E60075F9F0 /* UIKitFlightsSearchViewControllerFactory.swift */,
+				53A8AA30269F93E300EE304B /* Routing */,
 			);
-			path = Routing;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		53663145269D94630075F9F0 /* Flights */ = {
@@ -184,9 +200,28 @@
 			path = Flights;
 			sourceTree = "<group>";
 		};
+		53A8AA29269F91C500EE304B /* Initialization */ = {
+			isa = PBXGroup;
+			children = (
+				53663129269D92E60075F9F0 /* InitialControllerFactory.swift */,
+				53A8AA2A269F91D600EE304B /* DeeplinkRegistrator.swift */,
+			);
+			path = Initialization;
+			sourceTree = "<group>";
+		};
+		53A8AA30269F93E300EE304B /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				53A8AA2E269F93A200EE304B /* UIKitPushFlightsSearchRouter.swift */,
+				53A8AA1D269F75B000EE304B /* DeeplinkFlightsSearchRouter.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		53C102B2269CD5CB002EEB05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53A8AA26269F90ED00EE304B /* MyFlightsDeeplinking */,
 				53C102CA269CE46D002EEB05 /* FlightsSearchPresentation */,
 				53C102C7269CE3E9002EEB05 /* MyFlightsSearchEngine */,
 			);
@@ -212,6 +247,7 @@
 			packageProductDependencies = (
 				53C102C8269CE417002EEB05 /* MyFlightsSearchEngine */,
 				53C102CB269CE47B002EEB05 /* FlightsSearchPresentation */,
+				53A8AA27269F90F100EE304B /* MyFlightsDeeplinking */,
 			);
 			productName = MyFlights;
 			productReference = 531E5CF92697AB25008C5827 /* MyFlights.app */;
@@ -324,7 +360,7 @@
 			files = (
 				531E5CFD2697AB25008C5827 /* AppDelegate.swift in Sources */,
 				5366313C269D92E60075F9F0 /* FirebaseFlightDetailViewControllerDelegateTracker.swift in Sources */,
-				53663134269D92E60075F9F0 /* PushFlightsSearchRouter.swift in Sources */,
+				53A8AA2D269F92EC00EE304B /* FlightsSearchViewControllerFactory.swift in Sources */,
 				53663136269D92E60075F9F0 /* CustomServiceFlightDetailViewControllerDelegateTracker.swift in Sources */,
 				5366313A269D92E60075F9F0 /* FirebaseFlightsSearchTracker.swift in Sources */,
 				531E5CFF2697AB25008C5827 /* SceneDelegate.swift in Sources */,
@@ -332,10 +368,15 @@
 				53663139269D92E60075F9F0 /* UIKitFlightsSearchViewControllerFactory.swift in Sources */,
 				5366313B269D92E60075F9F0 /* UIKitFlightDetailViewControllerFactory.swift in Sources */,
 				53663137269D92E60075F9F0 /* FlightsSearchViewControllerComposer.swift in Sources */,
+				53A8AA2F269F93A200EE304B /* UIKitPushFlightsSearchRouter.swift in Sources */,
+				53A8AA25269F8F7F00EE304B /* DetailsDeeplinkScreenFactory.swift in Sources */,
+				53A8AA1E269F75B000EE304B /* DeeplinkFlightsSearchRouter.swift in Sources */,
+				53A8AA2B269F91D600EE304B /* DeeplinkRegistrator.swift in Sources */,
 				5366313D269D92E60075F9F0 /* CustomServiceFlightsSearchTracker.swift in Sources */,
 				53663138269D92E60075F9F0 /* LocalWithFallbacksFlightsDataSource.swift in Sources */,
 				5366313E269D92E60075F9F0 /* FlightDetailViewControllerDelegateComposer.swift in Sources */,
 				53663135269D92E60075F9F0 /* InitialControllerFactory.swift in Sources */,
+				53A8AA32269F93FF00EE304B /* FlightDetailViewControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +639,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		53A8AA27269F90F100EE304B /* MyFlightsDeeplinking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyFlightsDeeplinking;
+		};
 		53C102C8269CE417002EEB05 /* MyFlightsSearchEngine */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MyFlightsSearchEngine;

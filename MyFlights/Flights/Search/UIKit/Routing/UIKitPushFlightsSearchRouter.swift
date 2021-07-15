@@ -1,10 +1,10 @@
 import UIKit
 
-class PushFlightsSearchRouter: FlightsSearchRouter {
+class UIKitPushFlightsSearchRouter: FlightsSearchRouter {
     var rootViewController: UIViewController?
-    private let detailScreenFactory: UIKitFlightDetailViewControllerFactory
+    private let detailScreenFactory: FlightDetailViewControllerFactory
     
-    init(detailScreenFactory: UIKitFlightDetailViewControllerFactory) {
+    init(detailScreenFactory: FlightDetailViewControllerFactory) {
         self.detailScreenFactory = detailScreenFactory
     }
     

@@ -2,7 +2,7 @@ import UIKit
 import FlightsSearchPresentation
 import MyFlightsSearchEngine
 
-class UIKitFlightDetailViewControllerFactory {
+class UIKitFlightDetailViewControllerFactory: FlightDetailViewControllerFactory {
     func viewController(withFlightId flightId: String) -> UIViewController {
         let presenter = FlightDetailPresenter()
         let dataSource = LocalWithFallbacksFlightsDataSource(
