@@ -1,25 +1,38 @@
-//
-//  SceneDelegate.swift
-//  MyFlights
-//
-//  Created by Nicolas Frugoni on 08/07/2021.
-//
-
 import UIKit
+import MyFlightsDeeplinking
+import WhatsNew
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
-    private let registrator = DeeplinkRegistrator()
-    private let initialVCFactory = InitialControllerFactory()
+    var deeplinkRegistry: DeeplinkRegistry?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: scene)
-        registrator.registerDeeplinks()
-        window.rootViewController = initialVCFactory.makeInitialController()
+        
+        let navigationController = UINavigationController(
+            rootViewController: UIKitFlightsSearchViewControllerFactory(
+                onFlightSelected: { [weak self] id in self?.deeplinkRegistry?.execute(url: .orDefaultDeeplink("myFlights://flights/detail?id=\(id)"))
+                }
+            ).viewController()
+        )
+        let deeplinkRegistry = DeeplinkRegistry(
+            defaultDeeplinkHandler: DefaultDeeplinkHandler(
+                navigationController: navigationController
+            )
+        )
+        DeeplinkBootstrapConfigurator(navigationController: navigationController)
+            .configureDeeplinks(registry: deeplinkRegistry)
+        
+        self.deeplinkRegistry = deeplinkRegistry
+        
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
+        
+        WhatsNewService().getWhatsNew { news in
+            deeplinkRegistry.execute(url: .orDefaultDeeplink("myFlights://flights/whats_new?title=\(news.title)&message=\(news.message)&action=\(news.action)"))
+        }
     }
 }

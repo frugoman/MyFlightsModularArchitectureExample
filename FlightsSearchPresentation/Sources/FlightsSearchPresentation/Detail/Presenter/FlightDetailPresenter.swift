@@ -13,12 +13,9 @@ public class FlightDetailPresenter: GetFlightByIdOutput {
     public func flightFetched(_ flight: Flight) {
         view?.show(
             flight: FlightDetailViewModel(
-                flight:
-                    FlightDetailViewModel.Flight(
-                        id: flight.id,
-                        name: flight.name.capitalized,
-                        duration: "Flight lasts \(flight.duration)mins.")
-            )
+                id: flight.id,
+                name: flight.name.capitalized,
+                duration: "Flight lasts \(flight.duration)mins.")
         )
     }
     

@@ -4,6 +4,12 @@ import MyFlightsSearchEngine
 import MyFlightsDeeplinking
 
 class UIKitFlightsSearchViewControllerFactory {
+    private let onFlightSelected: (String) -> Void
+    
+    init(onFlightSelected: @escaping (String) -> Void) {
+        self.onFlightSelected = onFlightSelected
+    }
+    
     func viewController() -> UIViewController {
         let presenter = FlightsSearchPresenter()
         let dataSource = LocalWithFallbacksFlightsDataSource(
@@ -21,17 +27,17 @@ class UIKitFlightsSearchViewControllerFactory {
             firebase.viewDidLoad,
             customTracker.viewDidLoad
         ]
-        let router = UIKitPushFlightsSearchRouter(detailScreenFactory: UIKitFlightDetailViewControllerFactory())
-//        let router = DeeplinkFlightsSearchRouter(application: UIApplication.shared, registry: DeeplinkRegistry.shared)
+//        let router = UIKitPushFlightsSearchRouter(detailScreenFactory: UIKitFlightDetailViewControllerFactory())
         composer.didSelect = [
             firebase.didSelect(flightWithId:),
             customTracker.didSelect(flightWithId:),
-            router.routeToDetails(_:)
+//            router.routeToDetails(_:)
+            onFlightSelected
         ]
         
         let vc = FlightsSearchViewController(delegate: composer)
         
-        router.rootViewController = vc
+//        router.rootViewController = vc
         presenter.view = vc
         
         return vc

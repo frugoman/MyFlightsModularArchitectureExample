@@ -8,7 +8,7 @@ public protocol FlightsSearchViewControllerDelegate {
 }
 
 public class FlightsSearchViewController: UIViewController {
-    private let tableView = UITableView()
+    let tableView = UITableView()
     private var flights = [FlightSearchViewModel.Flight]()
     private let delegate: FlightsSearchViewControllerDelegate
     

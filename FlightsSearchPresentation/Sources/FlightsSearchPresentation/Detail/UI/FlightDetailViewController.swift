@@ -9,8 +9,8 @@ public class FlightDetailViewController: UIViewController {
     private let flightId: String
     private let delegate: FlightDetailViewControllerDelegate
     
-    private let contentLabel = UILabel()
-    private let detailLabel = UILabel()
+    let contentLabel = UILabel()
+    let detailLabel = UILabel()
     
     public init(flightId: String, delegate: FlightDetailViewControllerDelegate) {
         self.delegate = delegate
@@ -48,8 +48,8 @@ public class FlightDetailViewController: UIViewController {
 
 extension FlightDetailViewController: FlightsDetailView {
     public func show(flight: FlightDetailViewModel) {
-        contentLabel.text = flight.flight.name
-        detailLabel.text = flight.flight.duration
+        contentLabel.text = flight.name
+        detailLabel.text = flight.duration
     }
     
     public func showErrorMessage(_ message: String) {

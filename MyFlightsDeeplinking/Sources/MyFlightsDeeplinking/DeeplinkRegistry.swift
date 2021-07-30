@@ -1,25 +1,34 @@
-import UIKit
+import Foundation
 
 public class DeeplinkRegistry {
-    public static let shared = DeeplinkRegistry()
-    private init(){}
+    let defaultDeeplinkHandler: DeeplinkHandler
+    var deeplinkHandlers = [DeeplinkHandler]()
     
-    private var deeplinks = [String: DeeplinkScreenFactory]()
-    
-    public func register(screenFactory: DeeplinkScreenFactory, forPath path: String) {
-        deeplinks[path] = screenFactory
+    public init(defaultDeeplinkHandler: DeeplinkHandler) {
+        self.defaultDeeplinkHandler = defaultDeeplinkHandler
     }
     
-    public func getScreen(forPath path: URL) -> UIViewController? {
-        return deeplinks[path.relativePath]?.screen(forPath: path)
+    public func register(deeplinkHandler: DeeplinkHandler) {
+        deeplinkHandlers.append(deeplinkHandler)
+    }
+    
+    public func execute(url: URL) {
+        let deeplink = Deeplink(url: url)
+        deeplinkHandler(for: deeplink).handle(url: deeplink)
+    }
+    
+    private func deeplinkHandler(for deeplink: Deeplink) -> DeeplinkHandler {
+        deeplinkHandlers
+            .first { $0.canHandle(url: deeplink) }
+            ?? defaultDeeplinkHandler
     }
 }
 
-extension URL {
-    public func value(forQuearyParam param: String) -> String? {
-        return URLComponents(url: self, resolvingAgainstBaseURL: false)?
-            .queryItems?
-            .first(where: { $0.name == param })?
-            .value
+public extension URL {
+    static func orDefaultDeeplink(_ url: String) -> URL {
+        guard let url = URL(string: url) else {
+            return URL(string: "myFlights://default/url")!
+        }
+        return url
     }
 }

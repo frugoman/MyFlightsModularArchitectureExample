@@ -1,11 +1,11 @@
     import XCTest
-    @testable import FlightsSearchPresentation
+    @testable import WhatsNew
 
-    final class FlightsSearchPresentationTests: XCTestCase {
+    final class WhatsNewTests: XCTestCase {
         func testExample() {
             // This is an example of a functional test case.
             // Use XCTAssert and related functions to verify your tests produce the correct
             // results.
-//            XCTAssertEqual(FlightsSearchPresentation().text, "Hello, World!")
+            XCTAssertEqual(WhatsNew().text, "Hello, World!")
         }
     }
