@@ -1,5 +1,5 @@
 import UIKit
-import MyFlightsDeeplinking
+import Deeplinking
 
 class DefaultDeeplinkHandler: DeeplinkHandler {
     private let navigationController: UINavigationController

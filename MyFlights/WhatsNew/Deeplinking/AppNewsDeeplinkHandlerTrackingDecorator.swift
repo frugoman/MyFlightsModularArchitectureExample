@@ -1,4 +1,4 @@
-import MyFlightsDeeplinking
+import Deeplinking
 
 public class AppNewsDeeplinkHandlerTrackingDecorator: DeeplinkHandler {
     let decoratee: AppNewsDeeplinkHandler

@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "531E5D0E2697AB26008C5827"
-               BuildableName = "MyFlightsTests.xctest"
-               BlueprintName = "MyFlightsTests"
-               ReferencedContainer = "container:MyFlights.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "FlightsSearchPresentationTests"
                BuildableName = "FlightsSearchPresentationTests"
                BlueprintName = "FlightsSearchPresentationTests"
@@ -52,20 +42,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MyFlightsDeeplinkingTests"
-               BuildableName = "MyFlightsDeeplinkingTests"
-               BlueprintName = "MyFlightsDeeplinkingTests"
-               ReferencedContainer = "container:MyFlightsDeeplinking">
+               BlueprintIdentifier = "MyFlightsSearchEngineTests"
+               BuildableName = "MyFlightsSearchEngineTests"
+               BlueprintName = "MyFlightsSearchEngineTests"
+               ReferencedContainer = "container:MyFlightsSearchEngine">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MyFlightsSearchEngineTests"
-               BuildableName = "MyFlightsSearchEngineTests"
-               BlueprintName = "MyFlightsSearchEngineTests"
-               ReferencedContainer = "container:MyFlightsSearchEngine">
+               BlueprintIdentifier = "DeeplinkingTests"
+               BuildableName = "DeeplinkingTests"
+               BlueprintName = "DeeplinkingTests"
+               ReferencedContainer = "container:Deeplinking">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WhatsNewTests"
+               BuildableName = "WhatsNewTests"
+               BlueprintName = "WhatsNewTests"
+               ReferencedContainer = "container:WhatsNew">
             </BuildableReference>
          </TestableReference>
       </Testables>

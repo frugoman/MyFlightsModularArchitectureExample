@@ -1,4 +1,4 @@
-import MyFlightsDeeplinking
+import Deeplinking
 import UIKit
 
 public class AppNewsDeeplinkHandler: DeeplinkHandler {
@@ -15,8 +15,11 @@ public class AppNewsDeeplinkHandler: DeeplinkHandler {
     }
     
     public func handle(url: Deeplink) {
-        let title = url.queryItem("title")!
-        let message = url.queryItem("message")!
+        guard
+            let title = url.queryItem("title"),
+            let message = url.queryItem("message")
+        else { return }
+        
         let actionDeeplink = url.queryItem("action")
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)

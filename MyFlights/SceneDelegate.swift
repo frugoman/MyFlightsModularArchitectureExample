@@ -1,5 +1,5 @@
 import UIKit
-import MyFlightsDeeplinking
+import Deeplinking
 import WhatsNew
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -11,12 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: scene)
         
-        let navigationController = UINavigationController(
-            rootViewController: UIKitFlightsSearchViewControllerFactory(
-                onFlightSelected: { [weak self] id in self?.deeplinkRegistry?.execute(url: .orDefaultDeeplink("myFlights://flights/detail?id=\(id)"))
-                }
-            ).viewController()
-        )
+        let navigationController = rootViewController()
         let deeplinkRegistry = DeeplinkRegistry(
             defaultDeeplinkHandler: DefaultDeeplinkHandler(
                 navigationController: navigationController
@@ -25,14 +20,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         DeeplinkBootstrapConfigurator(navigationController: navigationController)
             .configureDeeplinks(registry: deeplinkRegistry)
         
-        self.deeplinkRegistry = deeplinkRegistry
-        
         window.rootViewController = navigationController
+        self.deeplinkRegistry = deeplinkRegistry
         self.window = window
         window.makeKeyAndVisible()
         
-        WhatsNewService().getWhatsNew { news in
-            deeplinkRegistry.execute(url: .orDefaultDeeplink("myFlights://flights/whats_new?title=\(news.title)&message=\(news.message)&action=\(news.action)"))
-        }
+        // Example of something triggering deeplinks
+        WhatsNewExample(service: WhatsNewService()) { [weak self] news in
+            if let dlRegistry = self?.deeplinkRegistry {
+                WhatsNewRouter(deeplinkRegistry: dlRegistry).route(toNews: news)
+            }
+        }.fetch()
+    }
+    
+    private func rootViewController() -> UINavigationController {
+        UINavigationController(
+            rootViewController: UIKitFlightsSearchViewControllerFactory(
+                detailsScreenFactory: UIKitFlightDetailViewControllerFactory()
+            ).viewController()
+        )
     }
 }

@@ -1,5 +1,4 @@
 import UIKit
-import MyFlightsSearchEngine
 
 public protocol FlightDetailViewControllerDelegate {
     func viewDidLoad(withId id: String)

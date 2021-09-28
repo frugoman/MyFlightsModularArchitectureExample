@@ -1,5 +1,5 @@
 import UIKit
-import MyFlightsDeeplinking
+import Deeplinking
 
 class DetailsDeeplinkHandler: DeeplinkHandler {
     private let factory: FlightDetailViewControllerFactory

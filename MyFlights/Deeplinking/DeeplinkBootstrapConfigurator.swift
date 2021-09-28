@@ -1,5 +1,5 @@
 import UIKit
-import MyFlightsDeeplinking
+import Deeplinking
 import WhatsNew
 
 class DeeplinkBootstrapConfigurator {

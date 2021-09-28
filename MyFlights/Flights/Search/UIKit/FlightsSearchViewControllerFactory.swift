@@ -1,13 +1,16 @@
 import UIKit
 import FlightsSearchPresentation
 import MyFlightsSearchEngine
-import MyFlightsDeeplinking
 
-class UIKitFlightsSearchViewControllerFactory {
-    private let onFlightSelected: (String) -> Void
+protocol FlightsSearchViewControllerFactory {
+    func viewController() -> UIViewController
+}
+
+class UIKitFlightsSearchViewControllerFactory: FlightsSearchViewControllerFactory {
+    private let detailsScreenFactory: FlightDetailViewControllerFactory
     
-    init(onFlightSelected: @escaping (String) -> Void) {
-        self.onFlightSelected = onFlightSelected
+    init (detailsScreenFactory: FlightDetailViewControllerFactory) {
+        self.detailsScreenFactory = detailsScreenFactory
     }
     
     func viewController() -> UIViewController {
@@ -17,6 +20,7 @@ class UIKitFlightsSearchViewControllerFactory {
             fallback: RemoteFlightsDataSource()
         )
         let getAllFlights = GetFlightsForDestination(output: presenter, datasource: dataSource)
+        let router = PushFlightsSearchRouter(detailScreenFactory: detailsScreenFactory)
         
         let firebase = FirebaseFlightsSearchTracker()
         let customTracker = CustomServiceFlightsSearchTracker()
@@ -27,19 +31,29 @@ class UIKitFlightsSearchViewControllerFactory {
             firebase.viewDidLoad,
             customTracker.viewDidLoad
         ]
-//        let router = UIKitPushFlightsSearchRouter(detailScreenFactory: UIKitFlightDetailViewControllerFactory())
         composer.didSelect = [
             firebase.didSelect(flightWithId:),
             customTracker.didSelect(flightWithId:),
-//            router.routeToDetails(_:)
-            onFlightSelected
+            router.routeToDetails(_:)
         ]
         
         let vc = FlightsSearchViewController(delegate: composer)
         
-//        router.rootViewController = vc
         presenter.view = vc
-        
+        router.rootViewController = vc
         return vc
+    }
+}
+
+private class FlightsSearchViewControllerComposer: FlightsSearchViewControllerDelegate {
+    var onLoad = [() -> Void]()
+    var didSelect = [((String) -> Void)]()
+    
+    func viewDidLoad() {
+        onLoad.forEach { $0() }
+    }
+    
+    func didSelect(flightWithId flightId: String) {
+        didSelect.forEach { $0(flightId) }
     }
 }
