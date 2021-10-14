@@ -58,16 +58,6 @@
                ReferencedContainer = "container:Deeplinking">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "WhatsNewTests"
-               BuildableName = "WhatsNewTests"
-               BlueprintName = "WhatsNewTests"
-               ReferencedContainer = "container:WhatsNew">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
