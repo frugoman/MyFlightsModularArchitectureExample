@@ -1,5 +1,5 @@
 import XCTest
-@testable import MyFlightsDeeplinking
+@testable import Deeplinking
 
 final class DeeplinkRegistryTests: XCTestCase {
     fileprivate func makeDeeplink() -> Deeplink {
